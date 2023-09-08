@@ -1,8 +1,15 @@
-# React + Vite
+# useEffect demonstration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Generally, useEffect runs only after DOM is painted (both the first render and updates).
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In this example useEffect runs once - only after the first render of the component WindowWidthTracker, which is <h1 className="width-info">Window width: {windowWidth}</h1>. It runs once because the second argument passed to useEffect is an empty arrow.
+
+In this example React hook useEffect is used to set up window innerWidth tracker.
+It shows that we need to run 
+
+By toggling off the Window Width Tracker, we let React know that the life cycle of WindowWidthTracker component came to the end and it needs to be removed from the DOM. But the listener to watch window's resize does not go away. For that reason, we need to remove that listener too. We do it by providing a clean up function in useEffect (our effect which we passed to useEffect returns a function, which is the clean up function to remove listener to watch for window's resize).
+
+By toggling on back the Window Width Tracker, we make React render WindowWidthTracker again, and then useEffect will be run again. 
+
+
