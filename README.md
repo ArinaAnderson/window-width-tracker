@@ -3,7 +3,9 @@
 Generally, useEffect runs only after DOM is painted (both the first render and updates).
 
 
-In this example useEffect runs once - only after the first render of the component WindowWidthTracker, which is <h1 className="width-info">Window width: {windowWidth}</h1>. It runs once because the second argument passed to useEffect is an empty arrow.
+In this example useEffect runs once - only after the first render of the component WindowWidthTracker, which is
+<h1 className="width-info">Window width: {windowWidth}</h1>.
+In this case, useEffect runs once because the second argument passed to useEffect is an empty arrow.
 
 In this example React hook useEffect is used to set up window innerWidth tracker.
 It shows that we need to run 
