@@ -5,6 +5,7 @@ function Window() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
+    console.log('setting up an effect...');
     const handleWindowResize = () => {
       setWindowWidth(window.innerWidth);
     };
